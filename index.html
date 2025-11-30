@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/pgOPvmJB -->
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/px1OQgSX -->
 <html lang="pt-BR" data-theme="light" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
     <link href="./index_files/css2" rel="stylesheet">
     <style>
       body {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 32px 80px;
+        max-width: 100%;
+        margin: 0;
+        padding: 32px 40px 32px 280px;
         position: relative;
         box-sizing: border-box;
         font-family:
@@ -21,6 +21,11 @@
         line-height: 1.6;
         color: #2d3748;
         font-size: 14px;
+      }
+
+      .content-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
       }
 
       h1 {
@@ -440,73 +445,69 @@
         margin: 10px 0;
       }
 
-      /* Menu de Navegação Fixo */
-      .nav-menu {
+      /* Menu Lateral Fixo */
+      .side-menu {
         position: fixed;
-        top: 0;
         left: 0;
-        right: 0;
-        background: linear-gradient(135deg, #4338ca, #6366f1);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        top: 0;
+        bottom: 0;
+        width: 240px;
+        background: linear-gradient(180deg, #4338ca 0%, #6366f1 100%);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px 20px;
         z-index: 1000;
-        padding: 0;
+        overflow-y: auto;
       }
 
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 20px;
-      }
-
-      .nav-logo {
+      .side-menu-title {
         color: white;
-        font-weight: 700;
         font-size: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
       }
 
-      .nav-links {
-        display: flex;
-        gap: 5px;
+      .side-menu ul {
         list-style: none;
         margin: 0;
         padding: 0;
-        flex-wrap: wrap;
       }
 
-      .nav-links li {
-        margin: 0;
+      .side-menu li {
+        margin: 0 0 6px 0;
       }
 
-      .nav-links a {
-        color: white;
+      .side-menu a {
+        color: rgba(255, 255, 255, 0.85);
         text-decoration: none;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 0.8rem;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
         font-weight: 500;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         display: block;
-        white-space: nowrap;
+        border-left: 3px solid transparent;
       }
 
-      .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
+      .side-menu a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        border-left-color: white;
+        transform: translateX(3px);
       }
 
-      .nav-links a.active {
+      .side-menu a.active {
         background: rgba(255, 255, 255, 0.25);
+        color: white;
+        border-left-color: white;
+        font-weight: 600;
       }
 
-      /* Ajuste do body para o menu fixo */
-      body {
-        padding-top: 70px;
+      /* Container principal */
+      .main-container {
+        min-height: 100vh;
       }
 
       /* Evitar quebras de página */
@@ -536,34 +537,63 @@
         scroll-behavior: smooth;
       }
 
+      /* Overlay para mobile */
+      .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .menu-overlay.active {
+        display: block;
+        opacity: 1;
+      }
+
       /* Responsivo Mobile */
       @media (max-width: 768px) {
-        .nav-links {
-          display: none;
+        body {
+          padding: 80px 20px 20px 20px;
+        }
+
+        .side-menu {
+          position: fixed;
+          left: -260px;
+          top: 0;
+          bottom: 0;
+          width: 240px;
+          transition: left 0.3s ease;
+          overflow-y: auto;
         }
         
-        .nav-menu.mobile-open .nav-links {
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 100%;
+        .side-menu.mobile-open {
           left: 0;
-          right: 0;
-          background: #4338ca;
-          padding: 10px;
         }
 
         .menu-toggle {
           display: block;
-          background: none;
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          z-index: 1001;
+          background: #4338ca;
           border: none;
           color: white;
           font-size: 1.5rem;
           cursor: pointer;
+          padding: 12px 18px;
+          border-radius: 10px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        body {
-          padding: 70px 20px 20px 20px;
+        .content-wrapper {
+          max-width: 100%;
         }
       }
 
@@ -572,33 +602,46 @@
           display: none;
         }
       }
+
+      /* Tablets */
+      @media (min-width: 769px) and (max-width: 1200px) {
+        body {
+          padding: 32px 30px 32px 270px;
+        }
+        
+        .content-wrapper {
+          max-width: 100%;
+        }
+      }
     </style>
   <meta id="dcngeagmmhegagicpcmpinaoklddcgon"><meta id="dcngeagmmhegagicpcmpinaoklddcgon"><script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script></head>
   <body style="">
     <!-- CAPA -->
 
-    <!-- MENU DE NAVEGAÇÃO FIXO -->
-    <nav class="nav-menu" id="navMenu">
-      <div class="nav-container">
-        <div class="nav-logo">
-          🎯 BF PRIO 25
-        </div>
-        <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        <ul class="nav-links">
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#sumario">📊 Sumário</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao1">📈 Visão Geral</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao2">🛍️ Produtos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao3">💰 Financeiro</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao4">🎮 Gamificação</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao5">💡 Insights</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao6">🎯 Conclusões</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#graficos">📊 Gráficos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#apendice">📋 Apêndice</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- BOTÃO MENU MOBILE -->
+    <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
 
-    <div class="cover-page">
+    <!-- OVERLAY MOBILE -->
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- MENU LATERAL FIXO -->
+    <aside class="side-menu" id="sideMenu">
+      <div class="side-menu-title">🎯 BF PRIO 25</div>
+      <ul>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#sumario" onclick="navigate(event, &#39;sumario&#39;)">📊 Sumário</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao1" onclick="navigate(event, &#39;secao1&#39;)">📈 Visão Geral</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao2" onclick="navigate(event, &#39;secao2&#39;)">🛍️ Produtos</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao3" onclick="navigate(event, &#39;secao3&#39;)">💰 Financeiro</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao4" onclick="navigate(event, &#39;secao4&#39;)">🎮 Gamificação</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao5" onclick="navigate(event, &#39;secao5&#39;)">💡 Insights</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#secao6" onclick="navigate(event, &#39;secao6&#39;)">🎯 Conclusões</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#graficos" onclick="navigate(event, &#39;graficos&#39;)">📊 Gráficos</a></li>
+        <li><a href="https://www.genspark.ai/api/files/s/px1OQgSX#apendice" onclick="navigate(event, &#39;apendice&#39;)">📋 Apêndice</a></li>
+      </ul>
+    </aside>
+
+    <div class="content-wrapper">
+      <div class="cover-page">
       <h1 class="cover-title">BLACK FRIDAY PRIO 2025</h1>
       <p class="cover-subtitle">Relatório Executivo Completo<br>Análise de Performance e Insights Estratégicos</p>
       <div class="cover-meta">
@@ -2730,43 +2773,70 @@
         <p><strong>Próxima revisão:</strong> Janeiro 2026</p>
       </div>
     </div>
+    </div>
 
     <script>
       // Toggle menu mobile
       function toggleMobileMenu() {
-        const nav = document.getElementById('navMenu');
-        nav.classList.toggle('mobile-open');
+        const menu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('menuOverlay');
+        menu.classList.toggle('mobile-open');
+        overlay.classList.toggle('active');
       }
 
-      // Navegação suave e fechar menu mobile
-      document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('.nav-links a');
+      // Função de navegação
+      function navigate(event, targetId) {
+        event.preventDefault();
         
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Fechar menu mobile
-            const nav = document.getElementById('navMenu');
-            nav.classList.remove('mobile-open');
-            
-            // Navegar para a seção
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-              const offsetTop = targetElement.offsetTop - 80; // Ajuste para o menu fixo
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
+        // Fechar menu mobile
+        const menu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('menuOverlay');
+        menu.classList.remove('mobile-open');
+        overlay.classList.remove('active');
+        
+        // Encontrar e rolar até o elemento
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+        
+        // Atualizar link ativo
+        document.querySelectorAll('.side-menu a').forEach(link => {
+          link.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+      }
+
+      // Highlight automático ao rolar
+      window.addEventListener('scroll', () => {
+        const sections = ['sumario', 'secao1', 'secao2', 'secao3', 'secao4', 'secao5', 'secao6', 'graficos', 'apendice'];
+        let currentSection = '';
+        
+        sections.forEach(sectionId => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+              currentSection = sectionId;
+            }
+          }
+        });
+        
+        if (currentSection) {
+          document.querySelectorAll('.side-menu a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+              link.classList.add('active');
             }
           });
-        });
+        }
       });
     </script>
 
   
 
-<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a673ea37d92a41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a674c316f1ea41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
 </body></html>
