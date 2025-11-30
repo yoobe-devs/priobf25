@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/StmkEpmE -->
+<!-- saved from url=(0052)https://www.genspark.ai/api/files/s/7LRvQl94#sumario -->
 <html lang="pt-BR" data-theme="light" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -585,15 +585,15 @@
         </div>
         <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
         <ul class="nav-links">
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#sumario">📊 Sumário</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao1">📈 Visão Geral</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao2">🛍️ Produtos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao3">💰 Financeiro</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao4">🎮 Gamificação</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao5">💡 Insights</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#secao6">🎯 Conclusões</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#graficos">📊 Gráficos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/StmkEpmE#apendice">📋 Apêndice</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#sumario">📊 Sumário</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao1">📈 Visão Geral</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao2">🛍️ Produtos</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao3">💰 Financeiro</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao4">🎮 Gamificação</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao5">💡 Insights</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#secao6">🎯 Conclusões</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#graficos">📊 Gráficos</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/7LRvQl94#apendice">📋 Apêndice</a></li>
         </ul>
       </div>
     </nav>
@@ -2740,35 +2740,40 @@
 
       // Fechar menu ao clicar em link
       document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
           const nav = document.getElementById('navMenu');
           nav.classList.remove('mobile-open');
+          
+          // Garantir navegação suave sem requisições HTTP
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
 
-      // Highlight link ativo
-      window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('[id]');
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(section => {
-          const sectionHeight = section.offsetHeight;
-          const sectionTop = section.offsetTop - 100;
-          const sectionId = section.getAttribute('id');
-          
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-links a').forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add('active');
-              }
-            });
-          }
+      // Scroll suave para todas as âncoras
+      document.addEventListener('DOMContentLoaded', () => {
+        // Prevenir comportamento padrão de todos os links âncora
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              // Atualizar URL sem recarregar
+              history.pushState(null, null, `#${targetId}`);
+            }
+          });
         });
       });
     </script>
 
   
 
-<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a671c07caf3a41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a673415c806a41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
 </body></html>
