@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/3znEouOo -->
+<!-- saved from url=(0044)https://www.genspark.ai/api/files/s/pgOPvmJB -->
 <html lang="pt-BR" data-theme="light" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -585,15 +585,15 @@
         </div>
         <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
         <ul class="nav-links">
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#sumario">📊 Sumário</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao1">📈 Visão Geral</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao2">🛍️ Produtos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao3">💰 Financeiro</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao4">🎮 Gamificação</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao5">💡 Insights</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#secao6">🎯 Conclusões</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#graficos">📊 Gráficos</a></li>
-          <li><a href="https://www.genspark.ai/api/files/s/3znEouOo#apendice">📋 Apêndice</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#sumario">📊 Sumário</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao1">📈 Visão Geral</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao2">🛍️ Produtos</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao3">💰 Financeiro</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao4">🎮 Gamificação</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao5">💡 Insights</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#secao6">🎯 Conclusões</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#graficos">📊 Gráficos</a></li>
+          <li><a href="https://www.genspark.ai/api/files/s/pgOPvmJB#apendice">📋 Apêndice</a></li>
         </ul>
       </div>
     </nav>
@@ -2738,33 +2738,28 @@
         nav.classList.toggle('mobile-open');
       }
 
-      // Fechar menu ao clicar em link
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const nav = document.getElementById('navMenu');
-          nav.classList.remove('mobile-open');
-          
-          // Garantir navegação suave sem requisições HTTP
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-
-      // Scroll suave para todas as âncoras
+      // Navegação suave e fechar menu mobile
       document.addEventListener('DOMContentLoaded', () => {
-        // Prevenir comportamento padrão de todos os links âncora
-        const anchorLinks = document.querySelectorAll('a[href^="#"]');
-        anchorLinks.forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
             e.preventDefault();
+            
+            // Fechar menu mobile
+            const nav = document.getElementById('navMenu');
+            nav.classList.remove('mobile-open');
+            
+            // Navegar para a seção
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
+            
             if (targetElement) {
-              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              const offsetTop = targetElement.offsetTop - 80; // Ajuste para o menu fixo
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
             }
           });
         });
@@ -2773,5 +2768,5 @@
 
   
 
-<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a6739b07ff2a41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
+<script defer="" src="./index_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9a673ea37d92a41a&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.9.1&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;}" crossorigin="anonymous"></script>
 </body></html>
